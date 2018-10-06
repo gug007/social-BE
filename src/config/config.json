@@ -1,0 +1,24 @@
+{
+  "test": {
+    "username": "root",
+    "password": "qwerty",
+    "database": "social",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "development": {
+    "username": "root",
+    "password": "qwerty",
+    "database": "social",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "root",
+    "password": "qwerty",
+    "database": "social",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
