@@ -2,7 +2,7 @@
 
 // TODO: connect db model
 const list = new Array(190).fill().map((v, i) => ({
-  id: i,
+  id: `${i}`,
   user: { id: 1, firstName: 'Gurgen',  lastName: 'Abagyan' },
   message: "hey dude.. how's it going? check out my new messenger app",
   date: new Date()

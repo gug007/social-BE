@@ -1,6 +1,7 @@
 import express from "express";
 import * as messages from "./messages";
 import * as chats from "./chats";
+import * as auth from "./auth";
 
 const router = express.Router();
 
@@ -9,9 +10,10 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get("/messages", messages.get); // public
-router.post("/messages", messages.post); // private
-router.get("/chats", chats.get); // public
-router.post("/chats", chats.post); // private
+router.use("/auth", auth.number);
+router.get("/messages", messages.get);
+router.post("/messages", messages.post);
+router.get("/chats", chats.get);
+router.post("/chats", chats.post);
 
 export default router;
