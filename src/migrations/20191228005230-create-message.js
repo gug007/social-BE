@@ -28,7 +28,7 @@ module.exports = {
         },
         allowNull: false
       },
-      body: { type: Sequelize.STRING },
+      body: { type: Sequelize.TEXT },
       attachments: Sequelize.ARRAY(Sequelize.TEXT),
       deleted: Sequelize.INTEGER,
       createdAt: {

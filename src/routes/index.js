@@ -11,7 +11,7 @@ router.use((req, res, next) => {
 });
 
 router.use("/auth", auth.number);
-router.get("/messages", messages.get);
+router.get("/messages/:id", messages.get);
 router.post("/messages", messages.post);
 router.get("/chats", chats.get);
 router.post("/chats", chats.post);
