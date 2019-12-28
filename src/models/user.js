@@ -1,18 +1,33 @@
-export default (sequelize, { INTEGER, STRING, DATE }) =>
-  sequelize.define(
+"use strict";
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define(
     "User",
     {
-      id: { type: INTEGER, primaryKey: true, autoIncrement: true },
-      firstName: STRING,
-      lastName: STRING,
-      phone: STRING,
-      email: STRING,
-      created_at: DATE,
-      updated_at: DATE
+      id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+      firstName: DataTypes.STRING,
+      lastName: DataTypes.STRING,
+      sex: DataTypes.INTEGER,
+      relation: DataTypes.INTEGER,
+      bdate: DataTypes.INTEGER,
+      country: DataTypes.INTEGER,
+      city: DataTypes.INTEGER,
+      phone: DataTypes.STRING,
+      email: {
+        type: DataTypes.STRING,
+        validate: {
+          isEmail: true
+        }
+      },
+      password: DataTypes.STRING,
+      createdAt: DataTypes.DATE,
+      updatedAt: DataTypes.DATE
     },
-    {
-      timestamps: false,
-      freezeTableName: true,
-      tableName: "users"
-    }
+    {}
   );
+  User.associate = function(models) {
+    User.hasMany(models.Message, {
+      foreignKey: "userId"
+    });
+  };
+  return User;
+};

@@ -8,8 +8,8 @@
     "logging": false
   },
   "development": {
-    "username": "root",
-    "password": "qwerty",
+    "username": "gug007",
+    "password": "",
     "database": "social",
     "host": "127.0.0.1",
     "dialect": "postgres"
