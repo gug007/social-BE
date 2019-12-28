@@ -1,16 +1,23 @@
 import { Message, User } from "../models";
 
+const includeUser = [
+  {
+    model: User
+  }
+];
+
 export const get = async ({ id }) => {
   return await Message.findAll({
     where: { chatId: id },
-    include: [
-      {
-        model: User
-      }
-    ]
+    include: includeUser
   });
 };
 
-export const post = async data => {
-  return await Promise.resolve([]);
+export const post = async ({ body, chatId, userId }) => {
+  return await Message.create(
+    { body, chatId, userId },
+    {
+      include: includeUser
+    }
+  );
 };

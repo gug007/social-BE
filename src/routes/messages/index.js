@@ -10,9 +10,8 @@ export const get = async (req, res) => {
 };
 
 export const post = async (req, res) => {
-  const { data } = req.queryAndBody;
   try {
-    res.send(await storage.post(data));
+    res.send(await storage.post(req.body));
   } catch (e) {
     res.status(500).send({ error: "Error" });
   }
