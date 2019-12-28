@@ -18,6 +18,16 @@ module.exports = {
         },
         allowNull: false
       },
+      chatId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: "Chats"
+          },
+          key: "id"
+        },
+        allowNull: false
+      },
       body: { type: Sequelize.STRING },
       attachments: Sequelize.ARRAY(Sequelize.TEXT),
       deleted: Sequelize.INTEGER,

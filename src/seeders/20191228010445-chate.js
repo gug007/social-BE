@@ -3,19 +3,15 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      "Messages",
+      "Chats",
       [
         {
-          body: "Hey Gurgen, how are you?",
-          userId: 1,
-          chatId: 1,
+          title: "Room 1",
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          body: "fine :)",
-          userId: 1,
-          chatId: 1,
+          title: "Room 1",
           createdAt: new Date(),
           updatedAt: new Date()
         }

@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
       userId: DataTypes.INTEGER,
+      chatId: DataTypes.INTEGER,
       body: DataTypes.STRING,
       attachments: DataTypes.ARRAY(DataTypes.TEXT),
       deleted: DataTypes.INTEGER,
@@ -16,6 +17,9 @@ module.exports = (sequelize, DataTypes) => {
   Message.associate = function(models) {
     Message.belongsTo(models.User, {
       foreignKey: "userId"
+    });
+    Message.belongsTo(models.Chat, {
+      foreignKey: "chatId"
     });
   };
   return Message;

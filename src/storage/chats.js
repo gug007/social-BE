@@ -1,13 +1,17 @@
-// import { Message } from "../models";
+import { Chat, Message } from "../models";
 
-// TODO: connect db model
-const list = [];
-
-export const get = async ({ id }) => {
-  return await Promise.resolve(list);
+export const get = async () => {
+  return await Chat.findAll({
+    include: [
+      {
+        model: Message,
+        order: [["id", "DESC"]],
+        limit: 1
+      }
+    ]
+  });
 };
 
 export const post = async data => {
-  list.push(data);
-  return await Promise.resolve(list);
+  return await Promise.resolve(data);
 };
