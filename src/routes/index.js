@@ -1,7 +1,8 @@
 import express from "express";
 import * as messages from "./messages";
 import * as chats from "./chats";
-import * as auth from "./auth";
+import * as user from "./user";
+import "./user/passport";
 
 const router = express.Router();
 
@@ -10,10 +11,11 @@ router.use((req, res, next) => {
   next();
 });
 
-router.use("/auth", auth.number);
+router.post("/signup", user.signup);
+router.post("/login", user.login);
 router.get("/messages/:id", messages.get);
 router.post("/messages", messages.post);
-router.get("/chats", chats.get);
+router.get("/chats", user.auth, chats.get);
 router.post("/chats", chats.post);
 
 export default router;

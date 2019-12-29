@@ -17,7 +17,11 @@ module.exports = {
       country: { type: Sequelize.INTEGER },
       city: { type: Sequelize.INTEGER },
       phone: { type: Sequelize.INTEGER },
-      email: { type: Sequelize.STRING },
+      email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+      },
       password: { type: Sequelize.STRING },
       createdAt: {
         allowNull: false,

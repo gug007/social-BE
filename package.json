@@ -6,9 +6,14 @@
   "license": "ISC",
   "homepage": "https://github.com/gug007/social-BE#readme",
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "jsonwebtoken": "^8.5.1",
     "node-fetch": "^2.2.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.3"
   },
@@ -23,8 +28,7 @@
     "sequelize-cli": "^5.5.1"
   },
   "scripts": {
-    "seed":
-      "cd src && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
+    "seed": "cd src && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "drop": "cd src && npx sequelize-cli db:migrate:undo:all"
   }
 }
