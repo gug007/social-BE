@@ -1,11 +1,28 @@
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
 import { SECRET_KEY } from "./passport";
+import * as storage from "../../storage/user";
 
 export const auth = (...params) =>
   passport.authenticate("jwt", { session: false })(...params);
 
-export const signup = (req, res, next) => {
+export const get = async (req, res) => {
+  const user = await storage.get({ email: req.user.email });
+  return res.json({
+    id: user.id,
+    firstName: user.firstName,
+    lastName: user.lastName,
+    sex: user.sex,
+    relation: user.relation,
+    bdate: user.bdate,
+    country: user.country,
+    city: user.city,
+    phone: user.phone,
+    email: user.email
+  });
+};
+
+export const signup = (req, res) => {
   passport.authenticate("signup", { session: false }, (err, response, info) => {
     res.json(response);
   })(req, res);

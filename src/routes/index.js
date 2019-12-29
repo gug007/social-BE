@@ -13,6 +13,7 @@ router.use((req, res, next) => {
 
 router.post("/signup", user.signup);
 router.post("/login", user.login);
+router.get("/auth", user.auth, user.get);
 router.get("/messages/:id", messages.get);
 router.post("/messages", messages.post);
 router.get("/chats", user.auth, chats.get);
