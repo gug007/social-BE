@@ -6,15 +6,23 @@ module.exports = {
       "Messages",
       [
         {
-          body: "Hey Gurgen, how are you?",
-          userId: 1,
+          body: "Hey Gurgen",
+          userId: 2,
           chatId: 1,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          body: "😃👍",
+          body: "😃👋",
           userId: 1,
+          chatId: 1,
+          createdAt: new Date(),
+          updatedAt: new Date()
+        },
+
+        {
+          body: "😅",
+          userId: 2,
           chatId: 1,
           createdAt: new Date(),
           updatedAt: new Date()

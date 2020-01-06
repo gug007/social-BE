@@ -6,7 +6,7 @@ module.exports = {
       "Chats",
       [
         {
-          title: "Room 1",
+          title: "Donald Trump",
           createdAt: new Date(),
           updatedAt: new Date()
         },
