@@ -2,6 +2,7 @@ import express from "express";
 import * as messages from "./messages";
 import * as chats from "./chats";
 import * as user from "./user";
+import * as location from "./location";
 import "./user/passport";
 
 const router = express.Router();
@@ -18,5 +19,6 @@ router.get("/messages/:id", messages.get);
 router.post("/messages", messages.post);
 router.get("/chats", user.auth, chats.get);
 router.post("/chats", chats.post);
+router.get("/location/cities/:countryId", location.getCities);
 
 export default router;
