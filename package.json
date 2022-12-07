@@ -7,8 +7,8 @@
   "homepage": "https://github.com/gug007/social-BE#readme",
   "dependencies": {
     "bcrypt": "^3.0.7",
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
     "node-fetch": "^2.2.0",
     "passport": "^0.4.1",
